@@ -118,3 +118,18 @@ button:hover {
         width: 60%;
     }
 }
+
+.info {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#from{
+    margin: auto; margin-top: 50px
+}
+
+.footerId{
+    background: #046056; margin-top: 50px; width: 103%; margin-left: -25px
+}
