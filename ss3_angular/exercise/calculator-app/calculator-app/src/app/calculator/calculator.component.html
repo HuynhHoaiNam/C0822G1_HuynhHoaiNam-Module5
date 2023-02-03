@@ -1,0 +1,13 @@
+<h1>Calculator</h1><br>
+<input class="form-control" #firstValue placeholder="Nhập giá trị 1"><br>
+<select #operator class="form-select">
+  <option value="+" selected>Cộng</option>
+  <option value="-">Trừ</option>
+  <option value="*">Nhân</option>
+  <option value="/">Chia</option>
+</select><br>
+<input class="form-control" #secondValue placeholder="Nhập giá trị 2">
+<button type="submit" class="btn btn-primary" (click)="calculate(firstValue.value,operator.value,secondValue.value)">
+  Tính Toán
+</button>
+<h2>Kết quả phép tính là: {{calculation.result}}</h2>
