@@ -7,6 +7,9 @@ import { HomeFuramaComponent } from './component/home-furama/home-furama.compone
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { NavigationComponent } from './component/navigation/navigation.component';
+import { FacilityComponent } from './component/facility/facility.component';
+import { CreateComponent } from './component/facility/create/create.component';
+import { UpdateComponent } from './component/facility/update/update.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { NavigationComponent } from './component/navigation/navigation.component
     HomeFuramaComponent,
     HeaderComponent,
     FooterComponent,
-    NavigationComponent
+    NavigationComponent,
+    FacilityComponent,
+    CreateComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
