@@ -1,1 +1,111 @@
-<p>create works!</p>
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div>
+  <form action="/" class="decor" id="from">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+      <h1>Form chỉnh sửa dịch vụ</h1>
+      <div style="display: block">
+        <select id="facilityType" class="form-select"
+                onchange="changeForm(this)">
+          <option selected value="0">Villa</option>
+          <option value="1">House</option>
+          <option value="2">Room</option>
+        </select>
+      </div>
+      <div id="nameForm" style="display: block; margin-top: 10px">
+        <input type="text" placeholder="Tên dịch vụ">
+      </div>
+      <div id="areaForm" style="display: block">
+        <input type="text" placeholder="Diện tích">
+      </div>
+      <div id="costForm" style="display: block">
+        <input type="text" placeholder="Giá">
+      </div>
+      <div id="maxPeopleForm" style="display: block">
+        <input type="text" placeholder="Số người tối đa">
+      </div>
+      <div id="standardRoomForm" style="display: block">
+        <input type="text" placeholder="Tiêu chuẩn phòng">
+      </div>
+      <div id="descriptionForm" style="display: block">
+        <input type="text" placeholder="Mô tả tiện nghi">
+      </div>
+      <div id="poolAreaForm" style="display: block">
+        <input type="text" placeholder="Diện tích hồ bơi">
+      </div>
+      <div id="numberOfFloorsForm" style="display: block">
+        <input type="text" placeholder="Số tầng">
+      </div>
+      <div id="facilityFreeForm" style="display: block">
+        <input type="text" placeholder="Dịch vụ miễn phí đi kèm">
+      </div>
+      <div id="rentTypeForm" style="display: block">
+        <input type="text" placeholder="Kiểu thuê">
+      </div>
+      <button type="submit" >Submit</button>
+    </div>
+  </form>
+</div>
+<script>
+  function changeForm(type) {
+    let selectType = type.value;
+    switch (selectType) {
+      case "1":
+        document.getElementById("standardRoomForm").style.display = "block";
+        document.getElementById("descriptionForm").style.display = "block";
+        document.getElementById("poolAreaForm").style.display = "block";
+        document.getElementById("numberOfFloorsForm").style.display = "block";
+        document.getElementById("facilityFreeForm").style.display = "none";
+        document.getElementById("nameForm").style.display = "block";
+        document.getElementById("areaForm").style.display = "block";
+        document.getElementById("costForm").style.display = "block";
+        document.getElementById("maxPeopleForm").style.display = "block";
+        document.getElementById("rentTypeForm").style.display = "block";
+        document.getElementById("save").style.display = "block";
+        break;
+      case "2":
+        document.getElementById("standardRoomForm").style.display = "block";
+        document.getElementById("descriptionForm").style.display = "block";
+        document.getElementById("poolAreaForm").style.display = "none";
+        document.getElementById("numberOfFloorsForm").style.display = "block";
+        document.getElementById("facilityFreeForm").style.display = "none";
+        document.getElementById("nameForm").style.display = "block";
+        document.getElementById("areaForm").style.display = "block";
+        document.getElementById("costForm").style.display = "block";
+        document.getElementById("maxPeopleForm").style.display = "block";
+        document.getElementById("rentTypeForm").style.display = "block";
+        document.getElementById("save").style.display = "block";
+        break;
+      case "3":
+        document.getElementById("standardRoomForm").style.display = "none";
+        document.getElementById("descriptionForm").style.display = "none";
+        document.getElementById("poolAreaForm").style.display = "none";
+        document.getElementById("numberOfFloorsForm").style.display = "none";
+        document.getElementById("facilityFreeForm").style.display = "block";
+        document.getElementById("nameForm").style.display = "block";
+        document.getElementById("areaForm").style.display = "block";
+        document.getElementById("costForm").style.display = "block";
+        document.getElementById("maxPeopleForm").style.display = "block";
+        document.getElementById("rentTypeForm").style.display = "block";
+        document.getElementById("save").style.display = "block";
+        break
+      case 0:
+        document.getElementById("standardRoomForm").style.display = "block";
+        document.getElementById("descriptionForm").style.display = "block";
+        document.getElementById("poolAreaForm").style.display = "block";
+        document.getElementById("numberOfFloorsForm").style.display = "block";
+        document.getElementById("facilityFreeForm").style.display = "block";
+        document.getElementById("nameForm").style.display = "block";
+        document.getElementById("areaForm").style.display = "block";
+        document.getElementById("costForm").style.display = "block";
+        document.getElementById("maxPeopleForm").style.display = "block";
+        document.getElementById("rentTypeForm").style.display = "block";
+        document.getElementById("save").style.display = "block";
+        break
+    }
+  }
+</script>
+<app-footer></app-footer>
