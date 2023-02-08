@@ -2,11 +2,13 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {FacilityComponent} from "./component/facility/facility.component";
 import {HomeFuramaComponent} from "./component/home-furama/home-furama.component";
+import {ListCustomerComponent} from "./component/customer/list-customer/list-customer.component";
 
 
 const routes: Routes = [
-  {path: 'facility', component: FacilityComponent},
   {path: 'home', component: HomeFuramaComponent},
+  {path: 'facility', component: FacilityComponent},
+  {path: 'listCustomer', component: ListCustomerComponent},
   {path: '', component: HomeFuramaComponent},
 ];
 

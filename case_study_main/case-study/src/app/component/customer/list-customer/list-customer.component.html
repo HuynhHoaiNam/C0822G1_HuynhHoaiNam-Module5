@@ -1,0 +1,53 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<button><img style="width: 50%" src="https://img.icons8.com/wired/64/null/plus-2-math.png"/></button>
+<!--    Main Content-->
+<div class="col-lg-12">
+  <table class="table table-primary table-striped container">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên khách hàng</th>
+      <th scope="col">Mã khách hàng</th>
+      <th scope="col">Ngày sinh</th>
+      <th scope="col">Giới tính</th>
+      <th scope="col">Số căn cước</th>
+      <th scope="col">Số điện thoại</th>
+      <th scope="col">Địa chỉ</th>
+      <th scope="col">Email</th>
+      <th scope="col">Sửa</th>
+      <th scope="col">Xoá</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Nguyễn Văn A</td>
+      <td>111</td>
+      <td>22/10/2022</td>
+      <td>Nam</td>
+      <td>099999999</td>
+      <td>0236546998</td>
+      <td>Đà Nẵng</td>
+      <td>heh@gmail.com</td>
+      <td>
+        <a class="nav-link">
+          <button class=" btn btn-primary"><img src="https://img.icons8.com/3d-fluency/94/null/edit.png"
+                                                style="width: 30px"/></button>
+        </a>
+      </td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-toggle="modal"
+          data-bs-target="#deleteModal">
+          <img src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/null/external-delete-user-interface-wanicon-lineal-color-wanicon.png"
+               style="width: 30px"/>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
