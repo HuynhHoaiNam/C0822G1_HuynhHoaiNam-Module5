@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {User} from "../user";
 
@@ -9,6 +9,7 @@ import {User} from "../user";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  @Output() submitEvent = new EventEmitter()
 
   userList: User[] = [
     {
@@ -42,7 +43,7 @@ export class RegisterComponent implements OnInit {
       email: new FormControl("", [Validators.required, Validators.pattern('^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$')]),
       user: new FormControl("", [Validators.required, Validators.minLength(5)]),
       password: new FormControl("", [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl("", [Validators.required, Validators.minLength(6)]),
+      confirmPassword: new FormControl("", [Validators.required]),
       country: new FormControl("", [Validators.required]),
       age: new FormControl("", [Validators.required, Validators.min(18)]),
       gender: new FormControl("", [Validators.required]),
@@ -57,10 +58,18 @@ export class RegisterComponent implements OnInit {
     return this.reactiveForm.controls;
   }
 
+
   passwordCheck() {
-    if (this.groupForm.password.value==this.groupForm.confirmPassword.value){
+    if (this.groupForm.confirmPassword.value==this.groupForm.password.value){
       return null;
     }
     return {'errorPass':true}
+  }
+
+  createUser() {
+    console.log(this.reactiveForm);
+    if (this.reactiveForm.valid) {
+      this.submitEvent.emit(this.reactiveForm.value);
+    }
   }
 }

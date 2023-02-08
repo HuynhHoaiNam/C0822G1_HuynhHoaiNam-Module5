@@ -1,4 +1,4 @@
-<form [formGroup]="reactiveForm">
+<form [formGroup]="reactiveForm" (ngSubmit)="createUser()">
   <table class="table table-success table-striped container">
     <tr>
       <th>Id:</th>
@@ -33,32 +33,13 @@
     <tr>
       <th>User Name:</th>
       <td>
-        <input class="text" type="text" name="userName" placeholder="userName" formControlName="userName">
+        <input class="text" type="text" name="user" placeholder="user" formControlName="user">
         <p style="color: black"
-           *ngIf="reactiveForm.controls.userName.hasError('required')&& reactiveForm.controls.userName.touched"></p>
-        <p style="color: black" *ngIf="reactiveForm.controls.userName.hasError('minLength')"></p>
+           *ngIf="reactiveForm.controls.user.hasError('required')&& reactiveForm.controls.user.touched">Không được để trống</p>
+        <p style="color: black" *ngIf="reactiveForm.controls.user.hasError('minLength')">Có độ dài ít nhất 6 kí tự</p>
       </td>
     </tr>
-    <tr>
-      <th>Pass Word:</th>
-      <td>
-        <input class="text" type="password" name="password" placeholder="Password">
-        <p style="color: black"
-           *ngIf="reactiveForm.controls.password.hasError('required')&& reactiveForm.controls.password.touched"></p>
-        <p style="color: black" *ngIf="reactiveForm.controls.password.hasError('minLength')"></p>
-      </td>
-    </tr>
-    <tr>
-      <th>Pass Word ConFirm:</th>
-      <td>
-        <input class="text" type="password" name="confirmPassword" placeholder="confirmPassword"
-               (change)="passwordCheck()">
-        <p style="color: black"
-           *ngIf="reactiveForm.controls.confirmPassword.hasError('required')&& reactiveForm.controls.confirmPassword.touched"></p>
-        <p style="color: black" *ngIf="reactiveForm.controls.confirmPassword.hasError('minLength')"></p>
-        <p style="color: black" *ngIf="groupForm.get.hasError('errorPass')"></p>
-      </td>
-    </tr>
+
     <tr>
       <th>Country:</th>
       <td>
@@ -74,21 +55,41 @@
       <td>
         <input class="text" type="text" name="phone" placeholder="phone">
         <p style="color: black"
-           *ngIf="reactiveForm.controls.phone.hasError('required')&& reactiveForm.controls.phone.touched"></p>
-        <p style="color: black" *ngIf="reactiveForm.controls.phone.hasError('pattern')"></p>
+           *ngIf="reactiveForm.controls.phone.hasError('required')&& reactiveForm.controls.phone.touched">Không được để trống</p>
+        <p style="color: black" *ngIf="reactiveForm.controls.phone.hasError('pattern')"> bắt đầu với +84, và theo sau là 9 đến 10 chữ số</p>
       </td>
     </tr>
     <tr>
       <th>Age:</th>
       <td>
         <input class="text" type="text" name="age" placeholder="age" formControlName="age">
-        <p style="color: black" *ngIf="reactiveForm.controls.age.hasError('min')"></p>
+        <p style="color: black" *ngIf="reactiveForm.controls.age.hasError('min')&& reactiveForm.controls.age.touched">Tuổi nhỏ nhất là 18</p>
       </td>
     </tr>
     <tr>
+      <th>Pass Word:</th>
+      <td>
+        <input class="text" type="password" name="password" placeholder="Password">
+        <p style="color: black"
+           *ngIf="reactiveForm.controls.password.hasError('required')&& reactiveForm.controls.password.touched">Không được để trống</p>
+        <p style="color: black" *ngIf="reactiveForm.controls.password.hasError('minLength')&& reactiveForm.controls.password.touched">Pass có độ dài ít nhất 6 kí tự</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Pass Word ConFirm:</th>
+      <td>
+        <input class="text" type="password" name="confirmPassword" placeholder="confirmPassword"
+               (change)="passwordCheck()">
+        <p style="color: black"
+           *ngIf="reactiveForm.controls.confirmPassword.hasError('required')&& reactiveForm.controls.confirmPassword.touched">Không được để trống</p>
+        <p style="color: black" *ngIf="reactiveForm.controls.confirmPassword.hasError('errorPass')&& reactiveForm.controls.confirmPassword.touched">Confirm phải trùng với password</p>
+      </td>
+    </tr>
+
+    <tr>
       <th></th>
       <td>
-        <button type="submit" class="btn btn-success" style="margin: auto">Update</button>
+        <button type="submit" style="margin: auto">Update</button>
       </td>
     </tr>
   </table>
