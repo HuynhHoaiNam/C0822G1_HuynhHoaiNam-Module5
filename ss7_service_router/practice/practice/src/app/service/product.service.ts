@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Product} from "../model/product";
 
 
@@ -6,6 +6,7 @@ import {Product} from "../model/product";
   providedIn: 'root'
 })
 export class ProductService {
+  product: Product = {};
   products: Product[] = [{
     id: 1,
     name: 'IPhone 12',
@@ -32,14 +33,37 @@ export class ProductService {
     price: 1895000,
     description: 'Like new'
   }];
-  constructor() { }
+
+  constructor() {
+  }
 
   saveProduct(product) {
     this.products.push(product);
   }
 
+  findProductById(id: number) {
+    return this.products.find(item => item.id === id);
+  }
 
   getAll() {
     return this.products;
+  }
+
+  update(product: any) {
+    for (let i = 0; i < this.getAll().length; i++) {
+      if (this.getAll()[i].id === product.id) {
+        return this.getAll()[i] = product;
+      }
+    }
+  }
+
+
+  delete(product: any) {
+    for (let i = 0; i < this.getAll().length; i++) {
+      if (this.getAll()[i].id === product.id) {
+        this.getAll().pop();
+        break;
+      }
+    }
   }
 }
