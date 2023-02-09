@@ -12,6 +12,7 @@ import { CreateComponent } from './component/facility/create/create.component';
 import { UpdateComponent } from './component/facility/update/update.component';
 import { ListCustomerComponent } from './component/customer/list-customer/list-customer.component';
 import { CreateCustomerComponent } from './component/customer/create-customer/create-customer.component';
+import { UpdateCustomerComponent } from './component/customer/update-customer/update-customer.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CreateCustomerComponent } from './component/customer/create-customer/cr
     UpdateComponent,
     ListCustomerComponent,
     CreateCustomerComponent,
+    UpdateCustomerComponent,
   ],
   imports: [
     BrowserModule,
