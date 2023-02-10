@@ -1,0 +1,127 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div class="col-lg-12" style="text-align: center;background-color: lightyellow"><h1 style="margin: 0">Danh Sách Hợp
+  Đồng</h1></div>
+<div>
+  <button type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop">
+    Tạo hợp đồng
+  </button>
+</div>
+<div>
+  <table class="table table-dark table-striped">
+    <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Dịch Vụ</th>
+      <th scope="col">Khách Hàng</th>
+      <th scope="col">Ngày Làm Hợp Đồng</th>
+      <th scope="col">Ngày Kết Thức</th>
+      <th scope="col">Tiền Đặt Cọc</th>
+      <th scope="col">Tổng Tiền</th>
+      <th colspan="3" style="text-align: center">Các Dịch Vụ Đi Kèm</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Room Twin01</td>
+      <td>Nguyễn Thị Hảo</td>
+      <td></td>
+      <td></td>
+      <td>0</td>
+      <td>1000000</td>
+      <td>
+        <!--                Button trigger modal-->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#staticBackdropDetail2">
+          +
+        </button>
+      </td>
+      <td>
+        <!-- Danh Sách Các Dịch Vụ Đi Kèm(màu xanh xanh)-->
+
+        <a>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#exampleModalView">
+            Danh sách dịch vụ đi kèm
+          </button>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
+
+<!-- Modal thêm mới(Tạo Hợp Đồng) -->
+<div class="modal fade staticBackdrop" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h5 class="modal-title text-black" id="staticBackdropLabel">Yêu Cầu Thêm Mới Hợp
+            Đồng</h5>
+          <!--                                    Nút X-->
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+        </div>
+        <!--                                Các input thêm mới Hợp Đồng-->
+        <div class="modal-body col-lg-12">
+          <div class="input-group flex-nowrap row">
+            <div class="col-lg-4 text-black">Ngày Bắt Đầu:</div>
+            <div class="col-lg-8"><input type="date" class="form-control"
+                                         aria-describedby="addon-wrapping" >
+            </div>
+          </div>
+          <div class="input-group flex-nowrap row" style="margin-top: 25px">
+            <div class="col-lg-4 text-black">Kết Thúc:</div>
+            <div class="col-lg-8"><input type="date" class="form-control"
+                                         aria-describedby="addon-wrapping" >
+            </div>
+          </div>
+          <div class="input-group flex-nowrap row" style="margin-top: 25px">
+            <div class="col-lg-4 text-black">Tiền Gửi:</div>
+            <div class="col-lg-8"><input type="text" class="form-control"
+                                         aria-describedby="addon-wrapping" >
+            </div>
+          </div>
+          <div class="input-group flex-nowrap row" style="margin-top: 25px">
+            <div class="col-lg-4 text-black">Tổng Tiền:</div>
+            <div class="col-lg-8"><input type="text" class="form-control"
+                                         aria-describedby="addon-wrapping" readonly>
+            </div>
+          </div>
+          <div class="input-group flex-nowrap row" style="margin-top: 25px">
+            <div class="col-lg-4 text-black">Khách Hàng Thuê Dịch Vụ:</div>
+            <div class="col-lg-8"><select class="form-select">
+              <option>1</option>
+              <option>2</option>
+            </select></div>
+          </div>
+          <div class="input-group flex-nowrap row" style="margin-top: 25px">
+            <div class="col-lg-4 text-black">Nhân Viên Thuê Dịch Vụ:</div>
+            <div class="col-lg-8"><select class="form-select">
+              <option>1</option>
+              <option>2</option>
+            </select></div>
+          </div>
+          <div class="input-group flex-nowrap row" style="margin-top: 25px">
+            <div class="col-lg-4 text-black">Dịch Vụ:</div>
+            <div class="col-lg-8"><select class="form-select">
+              <option>1</option>
+              <option>2</option>
+            </select></div>
+          </div>
+        </div>
+        <!--                                Các Nút Xác Nhận input Thêm Hợp đồng-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
+<!--          chú ý data-bs-dismiss="modal"-->
+          <button type="submit" class="btn btn-primary">Thêm Mới</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

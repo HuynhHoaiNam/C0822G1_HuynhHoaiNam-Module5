@@ -1,0 +1,25 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "content": "Làm bài tập",
+      "complete": true
+    },
+    {
+      "id": 2,
+      "content": "Quýnh Liên Minh",
+      "complete": true
+    },
+    {
+      "id": 3,
+      "content": "Đua xe",
+      "complete": true
+    }
+  ,
+    {
+      "id": 4,
+      "content": "Đi chơi",
+      "complete": true
+    }
+  ]
+}

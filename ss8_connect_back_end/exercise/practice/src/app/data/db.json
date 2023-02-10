@@ -1,0 +1,52 @@
+{
+  "product": [
+    {
+      "id": 2,
+      "name": "IPhone 11",
+      "price": 1560000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "name": "Nokia"
+      }
+    },
+    {
+      "id": 3,
+      "name": "IPhone X",
+      "price": 968000,
+      "description": "97%",
+      "category": {
+        "id": 2,
+        "name": "Iphone"
+      }
+    },
+    {
+      "id": 4,
+      "name": "ISung",
+      "price": 7540000,
+      "description": "98%",
+      "category": {
+        "id": 3,
+        "name": "Samsung"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Nokia"
+    },
+    {
+      "id": 2,
+      "name": "Iphone"
+    },
+    {
+      "id": 3,
+      "name": "Samsung"
+    },
+    {
+      "id": 4,
+      "name": "Oppo"
+    }
+  ]
+}
