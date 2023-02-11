@@ -6,6 +6,7 @@ import {ListCustomerComponent} from "./component/customer/list-customer/list-cus
 import {CreateCustomerComponent} from "./component/customer/create-customer/create-customer.component";
 import {CreateComponent} from "./component/facility/create/create.component";
 import {UpdateCustomerComponent} from "./component/customer/update-customer/update-customer.component";
+import {UpdateComponent} from "./component/facility/update/update.component";
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'facility', component: FacilityComponent},
   {path: 'listCustomer', component: ListCustomerComponent},
   {path: 'createFacility', component: CreateComponent},
+  {path: 'updateFacility', component: UpdateComponent},
   {path: 'createCustomer', component: CreateCustomerComponent},
   {path: 'updateCustomer', component: UpdateCustomerComponent},
   {path: '', component: HomeFuramaComponent},

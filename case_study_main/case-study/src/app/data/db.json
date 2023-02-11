@@ -1,0 +1,74 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Villa Beach Front",
+      "area": 25000,
+      "cost": 6000,
+      "maxPeople": 9,
+      "standardRoom": "vip",
+      "descriptionOtherConvenience?": "Co ho boi",
+      "poolArea": 764,
+      "img": "https://pqr.vn/wp-content/uploads/2020/06/villas-la-gi2.jpg",
+      "numberOfFloor": 3,
+      "facilityFree": "Villa Beach Front",
+      "rentType": {
+        "id": 1,
+        "name": "Hour"
+      },
+      "facilityType": {
+        "id": 1,
+        "name": "Villa"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Villa Beach Front2",
+      "area": 2524,
+      "cost": 345,
+      "maxPeople": 1,
+      "standardRoom": "pro",
+      "descriptionOtherConvenience?": "Có cái nịt",
+      "poolArea": 764,
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnkybTLUpcmqYti7Vk5Hs2F5gXb6J8hKC6Ig&usqp=CAU",
+      "numberOfFloor": 3,
+      "facilityFree": "Villa Beach Front2",
+      "rentType": {
+        "id": 3,
+        "name": "Year"
+      },
+      "facilityType": {
+        "id": 2,
+        "name": "House"
+      }
+    }
+  ],
+  "rentTypes": [
+    {
+      "id": 1,
+      "name": "Hour"
+    },
+    {
+      "id": 2,
+      "name": "Month"
+    },
+    {
+      "id": 3,
+      "name": "Year"
+    }
+  ],
+  "facilityTypes": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ]
+}
