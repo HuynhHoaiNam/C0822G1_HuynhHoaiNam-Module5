@@ -70,5 +70,30 @@
       "id": 3,
       "name": "Room"
     }
+  ],
+
+
+  "customer": [
+    {
+      "id": 1,
+      "name": "Nguyễn Văn A";
+      "dateOfBirth":"26/04/2000",
+      "gender": true,
+      "idCard": "039582953",
+      "phoneNumber": "0999999999",
+      "email": "Gangster99@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType":{
+        "id": 1,
+        "name": "Diana"
+      }
+    }
+  ],
+
+  "customerType":[
+    {
+      "id": 1,
+      "name": "Diana"
+    }
   ]
 }

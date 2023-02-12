@@ -20,20 +20,22 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Nguyễn Văn A</td>
-      <td>111</td>
-      <td>22/10/2022</td>
-      <td>Nam</td>
-      <td>099999999</td>
-      <td>0236546998</td>
-      <td>Đà Nẵng</td>
-      <td>heh@gmail.com</td>
+    <tr *ngFor="let customer of customerList, index as i">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{customer.name}}</td>
+      <td>{{customer.customerType.name}}</td>
+      <td>{{customer.dateOfBirth}}</td>
+      <td *ngIf="customer.gender==true else case2">Nam</td>
+      <ng-template #case2>Nữ</ng-template>
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phoneNumber}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.email}}</td>
       <td>
         <a class="nav-link">
-          <button [routerLink]="['/updateCustomer']" class=" btn btn-primary"><img src="https://img.icons8.com/3d-fluency/94/null/edit.png"
-                                                style="width: 30px"/> </button>
+          <button [routerLink]="['/updateCustomer']" class=" btn btn-primary"><img
+            src="https://img.icons8.com/3d-fluency/94/null/edit.png"
+            style="width: 30px"/></button>
         </a>
       </td>
       <td>
@@ -42,8 +44,9 @@
           class="btn btn-danger"
           data-bs-toggle="modal"
           data-bs-target="#deleteModal">
-          <img src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/null/external-delete-user-interface-wanicon-lineal-color-wanicon.png"
-               style="width: 30px"/>
+          <img
+            src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/null/external-delete-user-interface-wanicon-lineal-color-wanicon.png"
+            style="width: 30px"/>
         </button>
       </td>
     </tr>
