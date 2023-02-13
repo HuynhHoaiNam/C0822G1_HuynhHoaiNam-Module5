@@ -7,6 +7,7 @@ import {CreateCustomerComponent} from "./component/customer/create-customer/crea
 import {CreateComponent} from "./component/facility/create/create.component";
 import {UpdateCustomerComponent} from "./component/customer/update-customer/update-customer.component";
 import {UpdateComponent} from "./component/facility/update/update.component";
+import {ListContractComponent} from "./component/contract/list-contract/list-contract.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'updateFacility', component: UpdateComponent},
   {path: 'createCustomer', component: CreateCustomerComponent},
   {path: 'updateCustomer', component: UpdateCustomerComponent},
+  {path: 'listContract', component: ListContractComponent},
   {path: '', component: HomeFuramaComponent},
 ];
 

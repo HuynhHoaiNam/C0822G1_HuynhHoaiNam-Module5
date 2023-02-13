@@ -23,13 +23,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Room Twin01</td>
-      <td>Nguyễn Thị Hảo</td>
-      <td></td>
-      <td></td>
-      <td>0</td>
+    <tr *ngFor="let contract of contractList; index as i">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{contract.facility.name}}</td>
+      <td>{{contract.customer.name}}</td>
+      <td>{{contract.startDate}}</td>
+      <td>{{contract.endDate}}</td>
+      <td>{{contract.deposit}}</td>
       <td>1000000</td>
       <td>
         <!--                Button trigger modal-->
@@ -72,19 +72,19 @@
           <div class="input-group flex-nowrap row">
             <div class="col-lg-4 text-black">Ngày Bắt Đầu:</div>
             <div class="col-lg-8"><input type="date" class="form-control"
-                                         aria-describedby="addon-wrapping" >
+                                         aria-describedby="addon-wrapping">
             </div>
           </div>
           <div class="input-group flex-nowrap row" style="margin-top: 25px">
             <div class="col-lg-4 text-black">Kết Thúc:</div>
             <div class="col-lg-8"><input type="date" class="form-control"
-                                         aria-describedby="addon-wrapping" >
+                                         aria-describedby="addon-wrapping">
             </div>
           </div>
           <div class="input-group flex-nowrap row" style="margin-top: 25px">
             <div class="col-lg-4 text-black">Tiền Gửi:</div>
             <div class="col-lg-8"><input type="text" class="form-control"
-                                         aria-describedby="addon-wrapping" >
+                                         aria-describedby="addon-wrapping">
             </div>
           </div>
           <div class="input-group flex-nowrap row" style="margin-top: 25px">
@@ -100,13 +100,13 @@
               <option>2</option>
             </select></div>
           </div>
-          <div class="input-group flex-nowrap row" style="margin-top: 25px">
-            <div class="col-lg-4 text-black">Nhân Viên Thuê Dịch Vụ:</div>
-            <div class="col-lg-8"><select class="form-select">
-              <option>1</option>
-              <option>2</option>
-            </select></div>
-          </div>
+          <!--          <div class="input-group flex-nowrap row" style="margin-top: 25px">-->
+          <!--            <div class="col-lg-4 text-black">Nhân Viên Thuê Dịch Vụ:</div>-->
+          <!--            <div class="col-lg-8"><select class="form-select">-->
+          <!--              <option>1</option>-->
+          <!--              <option>2</option>-->
+          <!--            </select></div>-->
+          <!--          </div>-->
           <div class="input-group flex-nowrap row" style="margin-top: 25px">
             <div class="col-lg-4 text-black">Dịch Vụ:</div>
             <div class="col-lg-8"><select class="form-select">
@@ -118,7 +118,7 @@
         <!--                                Các Nút Xác Nhận input Thêm Hợp đồng-->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
-<!--          chú ý data-bs-dismiss="modal"-->
+          <!--          chú ý data-bs-dismiss="modal"-->
           <button type="submit" class="btn btn-primary">Thêm Mới</button>
         </div>
       </form>

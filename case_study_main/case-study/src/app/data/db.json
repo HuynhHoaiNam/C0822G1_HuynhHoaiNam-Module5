@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "facility": [
     {
       "id": 1,
       "name": "Villa Beach Front",
@@ -71,29 +71,156 @@
       "name": "Room"
     }
   ],
-
-
   "customer": [
     {
       "id": 1,
-      "name": "Nguyễn Văn A";
-      "dateOfBirth":"26/04/2000",
-      "gender": true,
+      "name": "Nguyễn Văn A",
+      "dateOfBirth": "26/04/2000",
+      "gender": 1,
       "idCard": "039582953",
       "phoneNumber": "0999999999",
       "email": "Gangster99@gmail.com",
       "address": "Đà Nẵng",
-      "customerType":{
+      "customerType": {
         "id": 1,
-        "name": "Diana"
+        "name": "Diamond"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Trần Văn C",
+      "dateOfBirth": "26/03/1899",
+      "gender": 1,
+      "idCard": "06546534135",
+      "phoneNumber": "077777777",
+      "email": "ahiahai@gmail.com",
+      "address": "Tuyên`Quang",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 3,
+      "name": "sdvsdv",
+      "dateOfBirth": "ssvsv",
+      "gender": 1,
+      "idCard": "svsv",
+      "phoneNumber": "sfsf",
+      "email": "sfsfd",
+      "address": "dsfsdf",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Hùnh",
+      "dateOfBirth": "22/02/2022",
+      "gender": 2,
+      "idCard": "000000000",
+      "phoneNumber": "0333333333",
+      "email": "akej98@gmail.com",
+      "address": "Lào Cai",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      }
+    },
+    {
+      "id": 5,
+      "name": "hhhhh",
+      "dateOfBirth": "hhhhhhhhh",
+      "gender": 1,
+      "idCard": "hhhhhhhhh",
+      "phoneNumber": "hhhhhhhhh",
+      "email": "hhhhhhhhhh",
+      "address": "hhhhhhhhh",
+      "customerType": {
+        "id": 2,
+        "name": "Platinium"
+      }
+    },
+    {
+      "id": 6,
+      "name": "ppppppppp",
+      "dateOfBirth": "pppppppp",
+      "gender": 2,
+      "idCard": "pppppppp",
+      "phoneNumber": "pppppppp",
+      "email": "ppppppp",
+      "address": "ppppppp",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 7,
+      "name": "tttttt",
+      "dateOfBirth": "tttttt",
+      "gender": 2,
+      "idCard": "ttttttt",
+      "phoneNumber": "ttttttt",
+      "email": "ttttttttt",
+      "address": "ttttttttt",
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      }
+    },
+    {
+      "id": 8,
+      "name": "qqqqqqqqqq",
+      "dateOfBirth": "qqqqqqqq",
+      "gender": "1",
+      "idCard": "qqqqqqqqqqqq",
+      "phoneNumber": "qqqqqqqqqqq",
+      "email": "qqqqqqqqq",
+      "address": "qqqqqqqqqqq",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
       }
     }
   ],
-
-  "customerType":[
+  "customerType": [
     {
       "id": 1,
-      "name": "Diana"
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "contract": [
+    {
+      "id": 1,
+      "startDate": "26/12/20200",
+      "endDate": "27/12/2020",
+      "deposit": 25,
+      "customer": {
+        "id": 1,
+        "name": "Nguyễn Văn A"
+      },
+      "facility": {
+        "id": 1,
+        "name": "Villa Beach Front"
+      }
     }
   ]
 }
