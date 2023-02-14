@@ -25,7 +25,11 @@ export class CustomerServiceService {
     return this.httpClient.delete("http://localhost:3000/customer/" + id);
   }
 
-  findById(id: number) {
+  findById(id: number){
     return this.httpClient.get("http://localhost:3000/customer/" + id);
+  }
+
+  update(customer: any) {
+    return this.httpClient.patch("http://localhost:3000/customer/" + customer.id, customer);
   }
 }

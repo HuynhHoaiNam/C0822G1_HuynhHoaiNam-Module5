@@ -110,9 +110,9 @@ button {
   font-weight: 400;
   color: #fff;
 }
-/*button:hover {*/
-/*  background: #3e4f24;*/
-/*}*/
+button:hover {
+  background: #3e4f24;
+}
 @media (min-width: 568px) {
   form {
     width: 60%;

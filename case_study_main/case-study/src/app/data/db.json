@@ -157,28 +157,14 @@
       }
     },
     {
-      "id": 7,
-      "name": "tttttt",
-      "dateOfBirth": "tttttt",
-      "gender": 2,
-      "idCard": "ttttttt",
-      "phoneNumber": "ttttttt",
-      "email": "ttttttttt",
-      "address": "ttttttttt",
-      "customerType": {
-        "id": 4,
-        "name": "Silver"
-      }
-    },
-    {
-      "id": 8,
-      "name": "qqqqqqqqqq",
-      "dateOfBirth": "qqqqqqqq",
+      "id": 9,
+      "name": "Ha Hoa",
+      "dateOfBirth": "26/05/1998",
       "gender": "1",
-      "idCard": "qqqqqqqqqqqq",
-      "phoneNumber": "qqqqqqqqqqq",
-      "email": "qqqqqqqqq",
-      "address": "qqqqqqqqqqq",
+      "idCard": "090909090",
+      "phoneNumber": "0916450645",
+      "email": "danang@gmail.com",
+      "address": "Da Nang",
       "customerType": {
         "id": 3,
         "name": "Gold"
@@ -210,7 +196,7 @@
   "contract": [
     {
       "id": 1,
-      "startDate": "26/12/20200",
+      "startDate": "26/12/2020",
       "endDate": "27/12/2020",
       "deposit": 25,
       "customer": {

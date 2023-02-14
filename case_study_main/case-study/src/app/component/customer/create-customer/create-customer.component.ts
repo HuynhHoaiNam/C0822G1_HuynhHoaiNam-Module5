@@ -23,12 +23,12 @@ export class CreateCustomerComponent implements OnInit {
   constructor(private customerService: CustomerServiceService,
               private route: Router,
               private customerTypeServiceService: CustomerTypeServiceService) {
-    const regexName = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$";
+    const regexName = "^[A-Z][a-z]*(?:[ ][A-Z][a-z]*)*$";
     const regexPhone = "^(090\\d{7})|(091\\d{7})|(\\(84\\)\\+90\\d{7})|(\\(84\\)\\+91\\d{7})$";
     const regexIdCard = "^(\\d{9}|\\d{12})$";
     const regexEmail = "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$";
     this.customerForm = new FormGroup({
-      id: new FormControl("", [Validators.required]),
+      id: new FormControl(),
       name: new FormControl("", [Validators.required, Validators.pattern(regexName)]),
       dateOfBirth: new FormControl("", [Validators.required]),
       gender: new FormControl(),
@@ -46,9 +46,9 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   createCustomer() {
-    console.log(this.customerForm.value);
     if (this.customerForm.valid) {
       this.customerService.create(this.customerForm.value).subscribe(next => {
+        console.log(next);
         alert("Thêm mới thành công");
         this.route.navigateByUrl("/listCustomer");
       }, error => {
