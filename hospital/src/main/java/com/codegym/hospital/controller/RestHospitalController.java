@@ -42,7 +42,7 @@ public class RestHospitalController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<MedicalFile> createMedicalFile(@ModelAttribute("medicalFile") MedicalFile medicalFile) {
+    public ResponseEntity<MedicalFile> createMedicalFile(@RequestBody MedicalFile medicalFile) {
         medicalFileService.create(medicalFile);
         return new ResponseEntity<>(HttpStatus.OK);
     }
