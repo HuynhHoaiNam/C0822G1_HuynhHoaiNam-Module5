@@ -4,6 +4,7 @@ import com.codegym.hospital.model.MedicalFile;
 import com.codegym.hospital.repository.IMedicalFileRepository;
 import com.codegym.hospital.service.medical_file.IMedicalFileService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,11 @@ public class MedicalFileService implements IMedicalFileService {
     }
 
     @Override
+    public MedicalFile findByIdMedicalFile(Integer id) {
+        return iMedicalFileRepository.findByIdMedicalFile(id);
+    }
+
+    @Override
     public void deleteById(int id) {
         iMedicalFileRepository.deleteById(id);
     }
@@ -32,12 +38,9 @@ public class MedicalFileService implements IMedicalFileService {
     }
 
     @Override
-    public MedicalFile findById(int id) {
-        return iMedicalFileRepository.findById(id);
+    public void update(String doctor, boolean flag, String hospitalDischargeDate, String hospitalizedDay, String medicalRecordCode, String patientCode, String reason, String treatments, Integer id) {
+        iMedicalFileRepository.update(doctor, flag, hospitalDischargeDate, hospitalizedDay, medicalRecordCode, patientCode, reason, treatments, id);
     }
 
-    @Override
-    public void update(String doctor, boolean flag, String hospital_discharge_date, String hospitalized_day, String medical_record_code, String patient_code, String reason, String treatments, Integer id) {
-        iMedicalFileRepository.update(doctor,  flag,  hospital_discharge_date,  hospitalized_day,  medical_record_code,  patient_code, reason, treatments, id);
-    }
+
 }

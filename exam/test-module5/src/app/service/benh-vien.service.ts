@@ -6,7 +6,10 @@ import {Observable} from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
+
+// const URL="http://localhost:8080";
 export class BenhVienService {
+
 
   constructor(private httpClient: HttpClient) {
   }
@@ -16,12 +19,12 @@ export class BenhVienService {
   }
 
   findById(id: number) {
-    return this.httpClient.get<MedicalRecord>("http://localhost:3000/" + id);
+    return this.httpClient.get<MedicalRecord>("http://localhost:8080/findById/" + id);
   }
 
 
-  chinhSua(benhAn: any) {
-    return this.httpClient.put<MedicalRecord>("http://localhost:3000/benhAn/" + benhAn.id, benhAn);
+  chinhSua(medicalRecord: any) {
+    return this.httpClient.put<MedicalRecord>("http://localhost:8080/update/" + medicalRecord.id, medicalRecord);
   }
 
   delete(id: number) {

@@ -19,16 +19,23 @@ export class UpdateComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private benhVienService: BenhVienService) {
+    // String doctor, @Param("flag") boolean flag,
+    // @Param("hospitalDischargeDate") String hospitalDischargeDate,
+    // @Param("hospitalizedDay") String hospitalizedDay,
+    // @Param("medicalRecordCode") String medicalRecordCode, @Param("patientCode")
+    // String patientCode, @Param("reason") String reason, @Param("treatments")
+    // String treatments, @Param("id") Integer id
     this.banhAnForm = new FormGroup({
-      id: new FormControl(),
-      medicalRecordCode: new FormControl(),
-      patientName: new FormControl("", [Validators.required, Validators.pattern("^[A-Z]*[a-z]*(?:[ ][A-Z]*[a-z]*)*$")]),
-      hospitalizedDay: new FormControl("", [Validators.required]),
+      doctor: new FormControl("", [Validators.required]),
+      flag: new FormControl(),
       hospitalDischargeDate: new FormControl("", [Validators.required]),
+      hospitalizedDay: new FormControl("", [Validators.required]),
+      medicalRecordCode: new FormControl(),
+      patientCode: new FormControl("", [Validators.required]),
+      patientName: new FormControl("", [Validators.required, Validators.pattern("^[A-Z]*[a-z]*(?:[ ][A-Z]*[a-z]*)*$")]),
       reason: new FormControl("", [Validators.required]),
       treatments: new FormControl("", [Validators.required]),
-      doctor: new FormControl("", [Validators.required]),
-      patientCode: new FormControl("", [Validators.required]),
+      id: new FormControl()
     })
 
     this.activatedRoute.paramMap.subscribe(next => {
@@ -56,7 +63,6 @@ export class UpdateComponent implements OnInit {
       alert("Chỉnh sửa thành công");
       this.router.navigateByUrl("/list");
     }, error => {
-
       alert("Chỉnh sửa thất bại");
     })
   }

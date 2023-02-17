@@ -5,6 +5,7 @@
         routerLink="/list">Back
 </button>
 <form class="container" [formGroup]="banhAnForm" (ngSubmit)="chinhSua()">
+  <input formControlName="flag" hidden type="text">
   <div class="m-4 row">
     <label class="col-sm-2 col-form-label">Mã bệnh án: </label>
     <div class="col-sm-10">
