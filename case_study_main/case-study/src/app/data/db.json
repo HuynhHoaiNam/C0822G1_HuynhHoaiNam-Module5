@@ -7,7 +7,7 @@
       "cost": 6000,
       "maxPeople": 9,
       "standardRoom": "vip",
-      "descriptionOtherConvenience?": "Co ho boi",
+      "descriptionOtherConvenience": "Co ho boi",
       "poolArea": 764,
       "img": "https://pqr.vn/wp-content/uploads/2020/06/villas-la-gi2.jpg",
       "numberOfFloor": 3,
@@ -28,7 +28,7 @@
       "cost": 345,
       "maxPeople": 1,
       "standardRoom": "pro",
-      "descriptionOtherConvenience?": "Có cái nịt",
+      "descriptionOtherConvenience": "Có cái nịt",
       "poolArea": 764,
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnkybTLUpcmqYti7Vk5Hs2F5gXb6J8hKC6Ig&usqp=CAU",
       "numberOfFloor": 3,
@@ -145,7 +145,7 @@
     {
       "id": 6,
       "name": "ppppppppp",
-      "dateOfBirth": "pppppppp",
+      "dateOfBirth": "Gold Dragon",
       "gender": 2,
       "idCard": "pppppppp",
       "phoneNumber": "pppppppp",
@@ -164,6 +164,20 @@
       "idCard": "090909090",
       "phoneNumber": "0916450645",
       "email": "danang@gmail.com",
+      "address": "Da Nang",
+      "customerType": {
+        "id": 3,
+        "name": "Gold"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Ten Khach Hang",
+      "dateOfBirth": "2023-02-09",
+      "gender": "1",
+      "idCard": "094888888",
+      "phoneNumber": "0912345678",
+      "email": "khachHang99@gmail.com",
       "address": "Da Nang",
       "customerType": {
         "id": 3,

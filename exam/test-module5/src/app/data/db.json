@@ -1,0 +1,78 @@
+{
+  "MedicalRecord": [
+    {
+      "id": 1,
+      "medicalRecordCode": "BA-001",
+      "patientName": "Nguyễn Văn A",
+      "hospitalizedDay": "2023-02-02",
+      "hospitalDischargeDate": "2023-05-03",
+      "reason": "Ung thư gan",
+      "treatments": "Mổ",
+      "doctor": "Lê Văn B",
+      "patient": {
+        "id": 1,
+        "patientCode": "BN-435"
+      }
+    },
+    {
+      "id": 2,
+      "medicalRecordCode": "BA-112",
+      "patientName": "Nguyễn Văn CCCCC",
+      "hospitalizedDay": "2023-03-17",
+      "hospitalDischargeDate": "2023-03-17",
+      "reason": "Trĩ",
+      "treatments": "Cắt",
+      "doctor": "Nguyễn Văn Đôn",
+      "patient": {
+        "id": 3,
+        "patientCode": "BN-984"
+      }
+    },
+    {
+      "id": 3,
+      "medicalRecordCode": "BA-064",
+      "patientName": "huynh hoai Nam",
+      "hospitalizedDay": "2023-02-17",
+      "hospitalDischargeDate": "2023-02-24",
+      "reason": "Covid",
+      "treatments": "Cách ly và theo dõi",
+      "doctor": "Nguyễn Huy",
+      "patient": {
+        "id": 2,
+        "patientCode": "BN-123"
+      }
+    },
+    {
+      "id": 4,
+      "medicalRecordCode": "BA-321",
+      "patientName": "Tôn Nữ D",
+      "hospitalizedDay": "2023-10-01",
+      "hospitalDischargeDate": "2023-10-03",
+      "reason": "Suy thận mạn",
+      "treatments": "Chạy thận",
+      "doctor": "La Văn L",
+      "patient": {
+        "id": 2,
+        "patientCode": "BN-123"
+      }
+    }
+  ],
+  "patient": [
+    {
+      "id": 1,
+      "patientCode": "BN-435"
+    },
+    {
+      "id": 2,
+      "patientCode": "BN-123"
+    },
+    {
+      "id": 3,
+      "patientCode": "BN-984"
+    },
+    {
+      "id": 4,
+      "patientCode": "BN-536"
+    }
+  ]
+}

@@ -1,8 +1,20 @@
 <app-header></app-header>
 <app-navigation></app-navigation>
-<button [routerLink]="['/createCustomer']" class="btn btn-outline-success">Thêm mới</button>
+<div>
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #name>
+  <select #selecName>
+    <option value="">Chọn loại khách</option>
+    <option *ngFor="let cusType of customerTypeList" [value]="cusType.name">{{cusType.name}}</option>
+  </select>
+  <button class="btn btn-outline-success text-white" type="submit" (click)="getName(name.value, selecName.value)">
+    Search
+  </button>
+</div>
 
-<button><img style="width: 50%" src="https://img.icons8.com/wired/64/null/plus-2-math.png"/></button>
+
+<!--<button [routerLink]="['/createCustomer']" class="btn btn-outline-success">Thêm mới</button>-->
+
+<button  routerLink="/createCustomer"><img style="width: 50%" src="https://img.icons8.com/wired/64/null/plus-2-math.png"/></button>
 <!--    Main Content-->
 <div class="col-lg-12">
   <table class="table table-primary table-striped container">
@@ -68,7 +80,7 @@
         <span>Bạn muốn xoá sản phẩm </span><span style="color: red">{{temp.name}}</span><span>này không?</span>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" >Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(temp.id)">Delete</button>
       </div>
     </div>

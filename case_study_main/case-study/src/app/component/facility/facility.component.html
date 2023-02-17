@@ -4,9 +4,9 @@
 <!--    Main Content List-->
 <!--Danh Sách Dịch Vụ-->
 
-<div class="row m-0" >
+<div class="row m-0">
   <div class="col-md-1"></div>
-  <div class="col-md-10" >
+  <div class="col-md-10">
     <div class="row">
       <div class="card col-md-4" *ngFor="let facility of facilityList">
         <img data-bs-toggle="modal"
@@ -27,7 +27,8 @@
           <!--          <a class="btn btn-outline-success w-25 m-2">-->
           <!--            Edit-->
           <!--          </a>-->
-          <button class="btn btn-outline-success w-25 m-2" routerLink="/updateFacility">Chỉnh sửa</button>
+          <button class="btn btn-outline-success w-25 m-2" [routerLink]="['/updateFacility',facility.id]">Chỉnh sửa
+          </button>
         </div>
       </div>
     </div>

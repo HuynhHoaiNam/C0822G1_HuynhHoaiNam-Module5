@@ -25,11 +25,23 @@ export class CustomerServiceService {
     return this.httpClient.delete("http://localhost:3000/customer/" + id);
   }
 
-  findById(id: number){
+  findById(id: number) {
     return this.httpClient.get("http://localhost:3000/customer/" + id);
   }
 
   update(customer: any) {
     return this.httpClient.patch("http://localhost:3000/customer/" + customer.id, customer);
+  }
+
+  findByName(name: any): Observable<Customer[]> {
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?name_like=" + name);
+  }
+
+  findNameSelectName(name: string, selectName: string) {
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?name_like=" + name + "&customerType.name=" + selectName);
+  }
+
+  findSelectName(selectName: string) {
+    return this.httpClient.get<Customer[]>("http://localhost:3000/customer?customerType.name=" + selectName);
   }
 }
