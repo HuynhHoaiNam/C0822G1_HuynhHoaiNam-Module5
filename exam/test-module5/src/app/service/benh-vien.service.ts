@@ -14,8 +14,8 @@ export class BenhVienService {
   constructor(private httpClient: HttpClient) {
   }
 
-  danhSach(): Observable<MedicalRecord[]> {
-    return this.httpClient.get<MedicalRecord[]>("http://localhost:8080/list");
+  danhSach(index: number): Observable<MedicalRecord[]> {
+    return this.httpClient.get<MedicalRecord[]>("http://localhost:8080/list?index=" + index);
   }
 
   findById(id: number) {
@@ -23,11 +23,15 @@ export class BenhVienService {
   }
 
 
-  chinhSua(medicalRecord: any) {
-    return this.httpClient.put<MedicalRecord>("http://localhost:8080/update/" + medicalRecord.id, medicalRecord);
+  create(medicalRecord: any) {
+    return this.httpClient.post<MedicalRecord>("http://localhost:8080/create/", medicalRecord);
   }
 
   delete(id: number) {
     return this.httpClient.delete("http://localhost:8080/" + id);
+  }
+
+  update(medicalRecord: any) {
+    return this.httpClient.put<MedicalRecord>("http://localhost:8080/update/" + medicalRecord.id, medicalRecord);
   }
 }

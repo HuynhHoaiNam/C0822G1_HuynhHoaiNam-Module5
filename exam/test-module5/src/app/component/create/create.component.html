@@ -1,46 +1,86 @@
 <app-header></app-header>
 <div><h1 style="text-align: center">Trang thêm mới</h1></div>
-<form  class="container">
+<form class="container" [formGroup]="banhAnForm" (ngSubmit)="create()">
+  <input formControlName="flag" hidden type="text">
+  <input formControlName="id" hidden type="number">
   <div class="m-4 row">
-    <div class="col-sm-2">User Type Name</div>
+    <label class="col-sm-2 col-form-label">Mã bệnh án: </label>
     <div class="col-sm-10">
-      <select class="form-select">
-        <option value="">Customer Type Name</option>
-        <option ></option>
-      </select>
+      <input type="text" class="form-control" formControlName="medicalRecordCode" disabled>
     </div>
   </div>
   <div class="m-4 row">
-    <label  class="col-sm-2 col-form-label">Name: </label>
+    <div class="col-sm-2">Mã bệnh nhân</div>
     <div class="col-sm-10">
-      <input type="text" class="form-control">
-<!--      <p class="text-danger">Chữ cái đầu phải viết hoa</p>-->
+      <input type="text" class="form-control" formControlName="patientCode" disabled>
+
     </div>
   </div>
   <div class="m-4 row">
-    <label  class="col-sm-2 col-form-label">Title: </label>
+    <label class="col-sm-2 col-form-label">Tên bệnh nhân: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" formControlName="patientName">
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.patientName.hasError('required')&&banhAnForm.controls.patientName.touched ">Không
+        được để trống</p>
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.patientName.hasError('pattern')&&banhAnForm.controls.patientName.touched">Tên bệnh
+        nhân là các kí tụ
+        không chứ số</p>
+
     </div>
   </div>
-<!--  <div class="m-4 row">-->
-<!--    <label class="col-sm-2">Gender: </label>-->
-<!--    <div class="col-sm-10">-->
-<!--      <label>-->
-<!--        <input type="radio">-->
-<!--      </label>Nam-->
-<!--      <label>-->
-<!--        <input type="radio">-->
-<!--      </label>Nữ-->
-<!--    </div>-->
-<!--  </div>-->
   <div class="m-4 row">
-    <label class="col-sm-2 col-form-label">Phone Number: </label>
+    <label class="col-sm-2 col-form-label">Ngày nhập viện: </label>
     <div class="col-sm-10">
-      <input type="text" class="form-control">
-<!--      <p class="text-danger">Không đúng định dạng</p>-->
+      <input type="date" class="form-control" formControlName="hospitalizedDay">
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.hospitalizedDay.hasError('required')&&banhAnForm.controls.hospitalizedDay.touched ">
+        Không
+        được để trống</p>
     </div>
   </div>
-  <button type="submit" class="d-flex justify-content-center btn btn-outline-success" style="margin: 0 auto">Save</button>
+  <div class="m-4 row">
+    <label class="col-sm-2 col-form-label">Ngày ra viện: </label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" formControlName="hospitalDischargeDate">
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.hospitalDischargeDate.hasError('required')&&banhAnForm.controls.hospitalDischargeDate.touched ">
+        Không
+        được để trống</p>
+    </div>
+  </div>
+  <div class="m-4 row">
+    <label class="col-sm-2 col-form-label">Lý do nhập viện: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="reason">
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.reason.hasError('required')&&banhAnForm.controls.reason.touched ">Không
+        được để trống</p>
+    </div>
+  </div>
+  <div class="m-4 row">
+    <label class="col-sm-2 col-form-label">Phương pháp điều trị: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="treatments">
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.treatments.hasError('required')&&banhAnForm.controls.treatments.touched ">
+        Không
+        được để trống</p>
+    </div>
+  </div>
+  <div class="m-4 row">
+    <label class="col-sm-2 col-form-label">Bác sĩ điều trị: </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" formControlName="doctor">
+      <p class="text-danger"
+         *ngIf="banhAnForm.controls.doctor.hasError('required')&&banhAnForm.controls.doctor.touched ">Không
+        được để trống</p>
+    </div>
+  </div>
+  <button type="submit" class="d-flex justify-content-center btn btn-outline-success" style="margin: 0 auto 10px">Lưu
+    thông tin
+  </button>
+
 </form>
 <app-footer></app-footer>

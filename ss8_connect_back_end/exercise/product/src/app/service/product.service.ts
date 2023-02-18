@@ -23,8 +23,8 @@ export class ProductService {
   }
 
 
-  create(value: any) {
-    return this.httpClient.post("http://localhost:3000/product", value)
+  create(medicalFile: any) {
+    return this.httpClient.post("http://localhost:3000/product/", medicalFile)
   }
 
   findProductById(id: number) {

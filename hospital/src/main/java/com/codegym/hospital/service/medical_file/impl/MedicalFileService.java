@@ -18,8 +18,8 @@ public class MedicalFileService implements IMedicalFileService {
     private IMedicalFileRepository iMedicalFileRepository;
 
     @Override
-    public List<MedicalFile> getAll() {
-        return iMedicalFileRepository.getAll();
+    public List<MedicalFile> getAll(int index) {
+        return iMedicalFileRepository.getAll(index);
     }
 
     @Override
@@ -38,9 +38,8 @@ public class MedicalFileService implements IMedicalFileService {
     }
 
     @Override
-    public void update(String doctor, boolean flag, String hospitalDischargeDate, String hospitalizedDay, String medicalRecordCode, String patientCode, String reason, String treatments, Integer id) {
-        iMedicalFileRepository.update(doctor, flag, hospitalDischargeDate, hospitalizedDay, medicalRecordCode, patientCode, reason, treatments, id);
+    public void update(MedicalFile medicalFile) {
+        iMedicalFileRepository.update(medicalFile.getDoctor(), medicalFile.isFlag(), medicalFile.getHospitalDischargeDate(), medicalFile.getHospitalizedDay(), medicalFile.getMedicalRecordCode(), medicalFile.getPatientCode(), medicalFile.getPatientName(), medicalFile.getReason(), medicalFile.getTreatments(), medicalFile.getId());
     }
-
 
 }

@@ -21,8 +21,8 @@ public interface IMedicalFileRepository extends JpaRepository<MedicalFile, Integ
     MedicalFile findByIdMedicalFile(@Param("id") Integer id);
 
     @Modifying
-    @Query(value = "select * from medical_file where flag= false", nativeQuery = true)
-    List<MedicalFile> getAll();
+    @Query(value = "select * from medical_file where flag= false limit ?1,1", nativeQuery = true)
+    List<MedicalFile> getAll(int index);
 
     @Modifying
     @Query(value = "update medical_file set flag=true where id= :id", nativeQuery = true)
@@ -33,6 +33,6 @@ public interface IMedicalFileRepository extends JpaRepository<MedicalFile, Integ
     void create(MedicalFile medicalFile);
 
     @Modifying
-    @Query(value = "update medical_file set doctor= :doctor,flag= :flag,hospital_discharge_date= :hospitalDischargeDate,hospitalized_day= :hospitalizedDay,medical_record_code= :medicalRecordCode,patient_code= :patientCode,patient_name= :patientName,reason= :reason,treatments= :treatments where id= :id;", nativeQuery = true)
-    void update(@Param("doctor") String doctor, @Param("flag") boolean flag, @Param("hospitalDischargeDate") String hospitalDischargeDate, @Param("hospitalizedDay") String hospitalizedDay, @Param("medicalRecordCode") String medicalRecordCode, @Param("patientCode") String patientCode, @Param("reason") String reason, @Param("treatments") String treatments, @Param("id") Integer id);
+    @Query(value = "update medical_file set doctor= ?1,flag= ?2,hospital_discharge_date= ?3,hospitalized_day= ?4,medical_record_code= ?5,patient_code= ?6,patient_name= ?7,reason= ?8,treatments= ?9 where id= ?10;", nativeQuery = true)
+    void update(String doctor, boolean flag, String hospitalDischargeDate, String hospitalizedDay, String medicalRecordCode, String patientCode, String patientName, String reason, String treatments, int id);
 }

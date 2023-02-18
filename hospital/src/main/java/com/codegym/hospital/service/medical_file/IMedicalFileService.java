@@ -8,7 +8,7 @@ import java.util.List;
 
 
 public interface IMedicalFileService {
-    List<MedicalFile> getAll();
+    List<MedicalFile> getAll(int index);
 
     MedicalFile findByIdMedicalFile(Integer id);
 
@@ -16,5 +16,5 @@ public interface IMedicalFileService {
 
     void create(MedicalFile medicalFile);
 
-    void update(String doctor, boolean flag, String hospitalDischargeDate,String hospitalizedDay,String medicalRecordCode, String patientCode, String reason, String treatments, Integer id);
+    void update(MedicalFile medicalFile);
 }

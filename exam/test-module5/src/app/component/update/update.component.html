@@ -4,8 +4,9 @@
 <button type="submit" class=" justify-content-end btn btn-outline-success" style="margin-left: 1200px "
         routerLink="/list">Back
 </button>
-<form class="container" [formGroup]="banhAnForm" (ngSubmit)="chinhSua()">
+<form class="container" [formGroup]="banhAnForm" (ngSubmit)="update()">
   <input formControlName="flag" hidden type="text">
+  <input formControlName="id" hidden type="number">
   <div class="m-4 row">
     <label class="col-sm-2 col-form-label">Mã bệnh án: </label>
     <div class="col-sm-10">

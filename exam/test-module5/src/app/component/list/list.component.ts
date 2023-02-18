@@ -13,14 +13,16 @@ export class ListComponent implements OnInit {
 
   temp: MedicalRecord = {};
 
+
   constructor(private router: Router,
               private benhVienService: BenhVienService) {
+
     this.danhSach();
   }
 
 
   danhSach() {
-    this.benhVienService.danhSach().subscribe(next => {
+    this.benhVienService.danhSach(0).subscribe(next => {
       console.log(next);
       this.danhSachBenhAn = next;
     }, error => {
@@ -38,5 +40,9 @@ export class ListComponent implements OnInit {
         this.danhSach();
       })
     }
+  }
+
+  nextPage() {
+
   }
 }

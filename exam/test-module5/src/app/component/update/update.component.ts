@@ -19,12 +19,6 @@ export class UpdateComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router,
               private benhVienService: BenhVienService) {
-    // String doctor, @Param("flag") boolean flag,
-    // @Param("hospitalDischargeDate") String hospitalDischargeDate,
-    // @Param("hospitalizedDay") String hospitalizedDay,
-    // @Param("medicalRecordCode") String medicalRecordCode, @Param("patientCode")
-    // String patientCode, @Param("reason") String reason, @Param("treatments")
-    // String treatments, @Param("id") Integer id
     this.banhAnForm = new FormGroup({
       doctor: new FormControl("", [Validators.required]),
       flag: new FormControl(),
@@ -51,19 +45,16 @@ export class UpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.benhVienService.danhSachBenhNhan().subscribe(next => {
-    //   this.danhSachBenhNhan = next;
-    // }, error => {
-    // })
-
   }
 
-  chinhSua() {
-    this.benhVienService.chinhSua(this.banhAnForm.value).subscribe(next => {
-      alert("Chỉnh sửa thành công");
-      this.router.navigateByUrl("/list");
-    }, error => {
-      alert("Chỉnh sửa thất bại");
-    })
+  update() {
+    if (this.banhAnForm.valid) {
+      this.benhVienService.update(this.banhAnForm.value).subscribe(next => {
+        alert("Chỉnh sửa thành công");
+        this.router.navigateByUrl("/list");
+      }, error => {
+        this.benhAn = this.banhAnForm.value
+      })
+    }
   }
 }
