@@ -34,7 +34,7 @@ public class MedicalFileService implements IMedicalFileService {
 
     @Override
     public void create(MedicalFile medicalFile) {
-        iMedicalFileRepository.create(medicalFile);
+        iMedicalFileRepository.create(medicalFile.getDoctor(), medicalFile.isFlag(), medicalFile.getHospitalDischargeDate(), medicalFile.getHospitalizedDay(), medicalFile.getMedicalRecordCode(), medicalFile.getPatientCode(), medicalFile.getPatientName(), medicalFile.getReason(), medicalFile.getTreatments(), medicalFile.getId());
     }
 
     @Override

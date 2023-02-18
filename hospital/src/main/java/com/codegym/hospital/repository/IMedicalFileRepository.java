@@ -29,8 +29,8 @@ public interface IMedicalFileRepository extends JpaRepository<MedicalFile, Integ
     void deleteById(@Param("id") int id);
 
     @Modifying
-    @Query(value = "INSERT INTO `hospital-be`.`medical_file` (`id`, `doctor`, `flag`, `hospital_discharge_date`, `hospitalized_day`, `medical_record_code`, `patient_code`, `patient_name`, `reason`, `treatments`) VALUES (?, ?, ?, ?, ?, ?,? , ?, ?,? )", nativeQuery = true)
-    void create(MedicalFile medicalFile);
+    @Query(value = "INSERT INTO `hospital-be`.`medical_file` (`id`, `doctor`, `flag`, `hospital_discharge_date`, `hospitalized_day`, `medical_record_code`, `patient_code`, `patient_name`, `reason`, `treatments`) VALUES (?10, ?1, ?2, ?3, ?4, ?5,?6 , ?7, ?8,?9 )", nativeQuery = true)
+    void create(String doctor, boolean flag, String hospitalDischargeDate, String hospitalizedDay, String medicalRecordCode, String patientCode, String patientName, String reason, String treatments, int id);
 
     @Modifying
     @Query(value = "update medical_file set doctor= ?1,flag= ?2,hospital_discharge_date= ?3,hospitalized_day= ?4,medical_record_code= ?5,patient_code= ?6,patient_name= ?7,reason= ?8,treatments= ?9 where id= ?10;", nativeQuery = true)
