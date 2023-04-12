@@ -1,0 +1,88 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div>
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #name>
+  <select #selecName>
+    <option value="">Chọn loại khách</option>
+    <option *ngFor="let cusType of customerTypeList" [value]="cusType.name">{{cusType.name}}</option>
+  </select>
+  <button class="btn btn-outline-success text-white" type="submit" (click)="getName(name.value, selecName.value)">
+    Search
+  </button>
+</div>
+
+
+<!--<button [routerLink]="['/createCustomer']" class="btn btn-outline-success">Thêm mới</button>-->
+
+<button  routerLink="/createCustomer"><img style="width: 50%" src="https://img.icons8.com/wired/64/null/plus-2-math.png"/></button>
+<!--    Main Content-->
+<div class="col-lg-12">
+  <table class="table table-primary table-striped container">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên khách hàng</th>
+      <th scope="col">Mã khách hàng</th>
+      <th scope="col">Ngày sinh</th>
+      <th scope="col">Giới tính</th>
+      <th scope="col">Số căn cước</th>
+      <th scope="col">Số điện thoại</th>
+      <th scope="col">Địa chỉ</th>
+      <th scope="col">Email</th>
+      <th scope="col">Sửa</th>
+      <th scope="col">Xoá</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let customer of customerList, index as i">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{customer.name}}</td>
+      <td>{{customer.customerType.name}}</td>
+      <td>{{customer.dateOfBirth}}</td>
+      <td>{{customer.gender == "1" ? "Nam" : "Nữ"}}
+      </td>
+      <!--      <ng-template #case2>Nữ</ng-template>-->
+      <td>{{customer.idCard}}</td>
+      <td>{{customer.phoneNumber}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.email}}</td>
+      <td>
+        <a class="nav-link">
+          <button [routerLink]="['/updateCustomer',customer.id]" class=" btn btn-primary"><img
+            src="https://img.icons8.com/3d-fluency/94/null/edit.png"
+            style="width: 30px"/></button>
+        </a>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" (click)="temp = customer"
+                data-bs-target="#exampleModal">
+          <img
+            src="https://img.icons8.com/external-wanicon-lineal-color-wanicon/64/null/external-delete-user-interface-wanicon-lineal-color-wanicon.png"
+            style="width: 30px"/>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-footer></app-footer>
+
+
+<!-- Modal xoá-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bạn chắc chắn muốn xoá</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <span>Bạn muốn xoá sản phẩm </span><span style="color: red">{{temp.name}}</span><span>này không?</span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="delete(temp.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

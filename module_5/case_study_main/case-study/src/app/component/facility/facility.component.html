@@ -1,0 +1,38 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<button [routerLink]="['/createFacility']" class="btn btn-outline-success">Thêm mới</button>
+<!--    Main Content List-->
+<!--Danh Sách Dịch Vụ-->
+
+<div class="row m-0">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="row">
+      <div class="card col-md-4" *ngFor="let facility of facilityList">
+        <img data-bs-toggle="modal"
+             data-bs-target="#exampleModalInfo"
+             src="{{facility.img}}"
+             class="btn card-img-top" alt="..." style="height: 100%">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text">Diện tích:{{facility.area}} m2</p>
+          <p class="card-text">Loại dịch vụ:{{facility.facilityType.name}} m2</p>
+          <p class="card-text"><small class="text-muted">Update For</small></p>
+        </div>
+        <div class="row d-flex justify-content-center">
+
+          <a class="btn btn-outline-success w-25 m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete
+          </a>
+          <!--          <a class="btn btn-outline-success w-25 m-2">-->
+          <!--            Edit-->
+          <!--          </a>-->
+          <button class="btn btn-outline-success w-25 m-2" [routerLink]="['/updateFacility',facility.id]">Chỉnh sửa
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  <div class="col-md-1"></div>-->
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,45 @@
+<!--    Navbar-->
+<div class="row sticky-top" style="background: #046056; height: 60px; text-align: center">
+  <nav class="navbar navbar-expand-lg" style="background: #046056">
+    <div class="collapse navbar-collapse container-fluid" id="navbarNavAltMarkup">
+      <div class="col-lg-1">
+
+      </div>
+      <div class="navbar-nav col-lg-8">
+        <!--DropDowns-->
+        <div class="btn-group">
+          <button type="button" class="btn btn-info" [routerLink]="['/home']">
+           Trang Chủ
+          </button>
+        </div>
+        <!--DropDowns2-->
+        <div class="btn-group" style="margin-left: 30px">
+          <button type="button" class="btn btn-info">
+            <a>Nhân Viên</a>
+          </button>
+        </div>
+        <div class="btn-group" style="margin-left: 30px">
+          <button type="button" class="btn btn-info" [routerLink]="['/listCustomer']">
+            Khách hàng
+          </button>
+        </div>
+        <div class="btn-group" style="margin-left: 30px">
+          <button type="button" class="btn btn-info" [routerLink]="['/facility']">
+            Dịch Vụ
+          </button>
+        </div>
+        <div class="btn-group" style="margin-left: 30px">
+          <button type="button" class="btn btn-info" [routerLink]="['/listContract']">
+            Contract
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success text-white" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</div>

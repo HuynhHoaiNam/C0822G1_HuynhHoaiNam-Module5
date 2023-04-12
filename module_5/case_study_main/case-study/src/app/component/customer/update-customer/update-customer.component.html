@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-navigation></app-navigation>
+<div>
+  <form class="decor" id="from" [formGroup]="customerForm" (ngSubmit)="update()">
+    <div class="form-left-decoration"></div>
+    <div class="form-right-decoration"></div>
+    <div class="circle"></div>
+    <div class="form-inner">
+      <h1 style="color: #1e2125">Form thêm mới khách hàng</h1>
+      <input type="text" placeholder="Tên khách hàng" formControlName="name">
+      <p *ngIf="customerForm.controls.name.hasError('pattern')&&customerForm.controls.name.touched">Tên Không được chứa
+        số</p>
+      <p *ngIf="customerForm.controls.name.hasError('required')&&customerForm.controls.name.touched">Không được để
+        trống</p>
+
+      <select class="form-select" formControlName="customerType" [compareWith]="compareWith">
+        <option [ngValue]="cusType" *ngFor="let cusType of customerTypeList">{{cusType.name}}</option>
+      </select>
+      <input type="date" placeholder="Ngày sinh" style="margin-top: 10px" formControlName="dateOfBirth">
+      <p *ngIf="customerForm.controls.dateOfBirth.hasError('required')&&customerForm.controls.dateOfBirth.touched">
+        Không được để trống</p>
+      <input type="text" placeholder="Căn cước" formControlName="idCard">
+      <p *ngIf="customerForm.controls.idCard.hasError('required')&&customerForm.controls.idCard.touched">Không được để
+        trống</p>
+      <p *ngIf="customerForm.controls.idCard.hasError('pattern')&&customerForm.controls.idCard.touched">Căn cước gồm
+        9|12 số và không chứa kí tự</p>
+      <p>
+        <input type="radio" value=1 formControlName="gender"> Nam
+        <input type="radio" value=2 formControlName="gender"> Nữ
+      </p>
+      <input type="text" placeholder="Số điện thoại" formControlName="phoneNumber">
+      <p *ngIf="customerForm.controls.phoneNumber.hasError('required')&&customerForm.controls.phoneNumber.touched">Không được để trống</p>
+      <p *ngIf="customerForm.controls.phoneNumber.hasError('pattern')&&customerForm.controls.phoneNumber.touched">
+        Đúng đinh dạng</p>
+      <input type="text" placeholder="Địa chỉ" formControlName="address">
+      <p *ngIf="customerForm.controls.address.hasError('required')&&customerForm.controls.address.touched">Không được
+        để trống</p>
+      <input type="text" placeholder="Email" formControlName="email">
+      <p *ngIf="customerForm.controls.email.hasError('required')&&customerForm.controls.email.touched">Không được để trống </p>
+      <p *ngIf="customerForm.controls.email.hasError('pattern')&&customerForm.controls.email.touched">Email đúng định
+        dạng xxx@xxx.xxx</p>
+      <button type="submit" >Submit</button>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>
